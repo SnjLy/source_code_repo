@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.helijia.baseshare.dao.mapper.ShareRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.helijia.baseshare.dao.entity.ShareRecord" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="config_id" property="configId" jdbcType="BIGINT" />
+    <result column="scope" property="scope" jdbcType="INTEGER" />
+    <result column="objectIds" property="objectids" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="business_id" property="businessId" jdbcType="VARCHAR" />
+    <result column="channel" property="channel" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="has_stock" property="hasStock" jdbcType="INTEGER" />
+    <result column="available_time" property="availableTime" jdbcType="TIMESTAMP" />
+    <result column="validate_hour" property="validateHour" jdbcType="INTEGER" />
+    <result column="disable_time" property="disableTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, config_id, scope, objectIds, user_id, code, business_id, channel, create_time, 
+    update_time, has_stock, available_time, validate_hour, disable_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from share_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from share_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.helijia.baseshare.dao.entity.ShareRecord" >
+    insert into share_record (id, config_id, scope, 
+      objectIds, user_id, code, 
+      business_id, channel, create_time, 
+      update_time, has_stock, available_time, 
+      validate_hour, disable_time)
+    values (#{id,jdbcType=BIGINT}, #{configId,jdbcType=BIGINT}, #{scope,jdbcType=INTEGER}, 
+      #{objectids,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{businessId,jdbcType=VARCHAR}, #{channel,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{hasStock,jdbcType=INTEGER}, #{availableTime,jdbcType=TIMESTAMP}, 
+      #{validateHour,jdbcType=INTEGER}, #{disableTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.helijia.baseshare.dao.entity.ShareRecord" >
+    insert into share_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="configId != null" >
+        config_id,
+      </if>
+      <if test="scope != null" >
+        scope,
+      </if>
+      <if test="objectids != null" >
+        objectIds,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="businessId != null" >
+        business_id,
+      </if>
+      <if test="channel != null" >
+        channel,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="hasStock != null" >
+        has_stock,
+      </if>
+      <if test="availableTime != null" >
+        available_time,
+      </if>
+      <if test="validateHour != null" >
+        validate_hour,
+      </if>
+      <if test="disableTime != null" >
+        disable_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="configId != null" >
+        #{configId,jdbcType=BIGINT},
+      </if>
+      <if test="scope != null" >
+        #{scope,jdbcType=INTEGER},
+      </if>
+      <if test="objectids != null" >
+        #{objectids,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hasStock != null" >
+        #{hasStock,jdbcType=INTEGER},
+      </if>
+      <if test="availableTime != null" >
+        #{availableTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validateHour != null" >
+        #{validateHour,jdbcType=INTEGER},
+      </if>
+      <if test="disableTime != null" >
+        #{disableTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.helijia.baseshare.dao.entity.ShareRecord" >
+    update share_record
+    <set >
+      <if test="configId != null" >
+        config_id = #{configId,jdbcType=BIGINT},
+      </if>
+      <if test="scope != null" >
+        scope = #{scope,jdbcType=INTEGER},
+      </if>
+      <if test="objectids != null" >
+        objectIds = #{objectids,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null" >
+        business_id = #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        channel = #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hasStock != null" >
+        has_stock = #{hasStock,jdbcType=INTEGER},
+      </if>
+      <if test="availableTime != null" >
+        available_time = #{availableTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validateHour != null" >
+        validate_hour = #{validateHour,jdbcType=INTEGER},
+      </if>
+      <if test="disableTime != null" >
+        disable_time = #{disableTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.helijia.baseshare.dao.entity.ShareRecord" >
+    update share_record
+    set config_id = #{configId,jdbcType=BIGINT},
+      scope = #{scope,jdbcType=INTEGER},
+      objectIds = #{objectids,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      business_id = #{businessId,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      has_stock = #{hasStock,jdbcType=INTEGER},
+      available_time = #{availableTime,jdbcType=TIMESTAMP},
+      validate_hour = #{validateHour,jdbcType=INTEGER},
+      disable_time = #{disableTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

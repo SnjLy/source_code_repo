@@ -1,0 +1,1 @@
+package com.FactoryModel.excemple.factory;import com.FactoryModel.excemple.strategy.StrategyInteface;/** * Created by admin on 2017/4/20. */public interface StrategyFactory {    StrategyInteface createStratege(Integer type);}

@@ -1,0 +1,1 @@
+package com.FactoryModel.excemple.strategy;import java.util.Map;/** * 解决某一办法的策略 * Created by yehao on 2017/4/20. */public interface StrategyInteface {    Map<Object, Object> solution(Integer type, String desc);}
