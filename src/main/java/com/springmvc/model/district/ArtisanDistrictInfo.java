@@ -1,7 +1,7 @@
 package com.springmvc.model.district;
 
 /**
- * @Package: com.helijia.admin.model.address.controller
+ * @Package: com.springmvc.model.district
  * @Description:
  * @function:
  * @Author : LiuYong

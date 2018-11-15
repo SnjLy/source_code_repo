@@ -12,7 +12,7 @@ sys.setdefaultencoding('utf-8')
 city = {"北京": "110100", "天津": "120100", "上海": "310100", "南京": "320100", "武汉": "420100", "杭州": "330100", "广州": "440100",
         "深圳": "440300", "重庆": "500100", "成都": "510100", "西安": "610100"}
 
-sql = "insert into `hlj_search`.`choice_city_resource` (`city_code`, `flag_type`, `create_time`, `object_id`, `resource_type`) values "
+sql = "insert into `yehao_test`.`choice_city_resource` (`city_code`, `flag_type`, `create_time`, `object_id`, `resource_type`) values "
 workbook = xlrd.open_workbook("/Users/yehao/Yehao/需求文档/首页为你甄选/yimei.xlsx")
 
 worksheet1 = workbook.sheet_by_index(0)

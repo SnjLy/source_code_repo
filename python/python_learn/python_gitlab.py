@@ -6,18 +6,16 @@ import requests
 '''
 读取配置的组名
 '''
-groupNames = ["card", "cs", "docs", "eoms", "family", "finance", "framework", "guide", "hlj-iris", "infra", "iris",
-              "order", "pay", "pivot", "product", "promotion", "risk", "searching", "server", "studio", "trade", "user"]
+groupNames = [""]
 '''
 读取配置的用户名
 '''
-userNames = ["yehao", "xiaoma", "zhs08512", "daxiong", "xiaobi", "qiuyu", "chuanwu", "chonglou", "hezi", "pipixia",
-             "canger", "kaixinguo", "dalong", "lanmao", "dafan", "wuweizi", "baiju", "xiaoniqiu"]
+userNames = ["123456"]
 
-token = "wTxbxzx5uW_adnfHASTp"
+token = "*******"
 
-userUrl = "https://git.hlj.team/api/v4/users?private_token=wTxbxzx5uW_adnfHASTp&username="
-groupUrl = "https://git.hlj.team/api/v4/groups?private_token=wTxbxzx5uW_adnfHASTp&search="
+userUrl = "https://localhost_git/api/v4/users?private_token=***&username="
+groupUrl = "https://localhost_git/api/v4/groups?private_token=***&search="
 
 
 def addMembers():
@@ -39,8 +37,8 @@ def addMembers():
                     group_id = g.get('id')
 
                     # 用户是否在这个组
-                    url2 = "https://git.hlj.team/api/v4/groups/" + str(group_id) + "/members/" + str(
-                        user_id) + "?private_token=wTxbxzx5uW_adnfHASTp"
+                    url2 = "https://localhsost_git/api/v4/groups/" + str(group_id) + "/members/" + str(
+                        user_id) + "?private_token=******"
                     # print url2
                     joined = requests.get(url2).json()
                     jId = joined.get('id')
@@ -51,8 +49,8 @@ def addMembers():
                     elif group_id is not None and user_id is not None:
                         print "准备添加", userName, "到group ", groupName
                         try:
-                            res = requests.post("https://git.hlj.team/api/v4/groups/" + str(group_id) + "/members",
-                                                data="private_token=wTxbxzx5uW_adnfHASTp&user_id=" + str(
+                            res = requests.post("https://localhost_git/api/v4/groups/" + str(group_id) + "/members",
+                                                data="private_token=*****&user_id=" + str(
                                                     user_id) + "&access_level=30")
                             print res
                             if res.status_code < 400:

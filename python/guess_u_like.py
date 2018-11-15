@@ -39,7 +39,7 @@ def classify0(inX, dataSet, labels, k):
 def formatRecentItems(userId, onum, totalPrice, favCategory, totalArtisanLevel, totalServiceAmount):
     cityId = 0
     cnn = mysql.connector.connect(user=sys.argv[4], password=sys.argv[5], host=sys.argv[2], port=sys.argv[3],
-                                  database="hlj")
+                                  database="yehao_test")
     cur = cnn.cursor()
     cur.execute("select artisan_id from us_order where user_id='%s' order by id desc limit 1" % (userId))
     alist = [i for i in cur]
@@ -142,7 +142,7 @@ def singleGuess(userId, onum, totalPrice, favCategory, totalArtisanLevel, totalS
     # r.set('guess_u_like_c67ac50c13484fa29d6ba8151a0a5aa5', guessList)
     startup_nodes = [{"host": sys.argv[1], "port": "6380"}]
     rc = StrictRedisCluster(startup_nodes=startup_nodes, decode_responses=True)
-    rc.set('helijia_helijia_guess_u_like_' + userId, guessList)
+    rc.set('guess_u_like_' + userId, guessList)
 
 
 def guess():

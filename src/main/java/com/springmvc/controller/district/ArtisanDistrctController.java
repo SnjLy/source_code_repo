@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Package: com.helijia.admin.model.address.controller
+ * @Package: com.springmvc.controller.district
  * @Description:  解析手艺人地址，在地图标注手艺人分布信息
  * @function:
  * @Author : LiuYong

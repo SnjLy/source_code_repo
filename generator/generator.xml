@@ -9,11 +9,8 @@
 		</commentGenerator>
 		<!-- 数据库链接URL、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-						connectionURL="jdbc:mysql://db.stg.helijia.com:6006/hlj" userId="hljtest_dev"
-						password="hljtest_dev123456">
-		<!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
-			password="123456">-->
+			password="123456">
 			<!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:orcl" 
 				userId="msa" password="msa"> -->
 		</jdbcConnection>
@@ -21,19 +18,19 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.helijia.baseshare.dao.entity"
+		<javaModelGenerator targetPackage="com.yehao_test.baseshare.dao.entity"
 			targetProject="src">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 		<!-- 生成的映射文件包名和位置 -->
-		<sqlMapGenerator targetPackage="com.helijia.baseshare.mapping"
+		<sqlMapGenerator targetPackage="com.yehao_test.baseshare.mapping"
 			targetProject="src">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 		<!-- 生成DAO的包名和位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.helijia.baseshare.dao.mapper" targetProject="src">
+			targetPackage="com.yehao_test.baseshare.dao.mapper" targetProject="src">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!-- 要生成那些表(更改tableName和domainObjectName就可以) -->

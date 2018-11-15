@@ -5,7 +5,6 @@ import MySQLdb
 
 
 def connectDB():
-    # connect=mysql.connect("db.stg.helijia.com", "hljtest_dev","hljtest_dev123456","skylab")
     connect = MySQLdb.connect(host="localhost", user="root", passwd="123456", db="skylab",
                               port=3306)
     cursor = connect.cursor()

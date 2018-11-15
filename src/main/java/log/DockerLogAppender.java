@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * @Package: com.helijia.framework.
+ * @Package: com.log
  * @Description: customer log4j appender class for docker log appender
  * @function: Applications migration to docker,
  * customize log files, print logs according to ${filePath}/${date}/${podName}/${fileName} for easy log collection,
