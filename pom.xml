@@ -205,6 +205,11 @@
 			<artifactId>solr-solrj</artifactId>
 			<version>5.3.1</version>
 		</dependency>
+		<dependency>
+			<artifactId>solr-core</artifactId>
+			<groupId>org.apache.solr</groupId>
+			<version>5.5.5</version>
+		</dependency>
 
 
 		<dependency>
