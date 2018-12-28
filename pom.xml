@@ -239,6 +239,12 @@
 			<version>0.12.2</version>
 		</dependency>
 
+		<!--https://www.librec.net/download.html-->
+		<dependency>
+			<groupId>net.librec</groupId>
+			<artifactId>librec-core</artifactId>
+			<version>2.0.0</version>
+		</dependency>
 
 	</dependencies>
 
