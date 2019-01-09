@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	public int deleteByPrimaryKey(Integer id) {
 		// TODO Auto-generated method stub
 		
-		return 0;
+		return userMapper.deleteByPrimaryKey(id);
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int insertSelective(User record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return userMapper.insertSelective(record);
 	}
 
 	@Override
@@ -49,13 +49,13 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int updateByPrimaryKeySelective(User record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return userMapper.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
 	public int updateByPrimaryKey(User record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return userMapper.updateByPrimaryKey(record);
 	}
 
 }

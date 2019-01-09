@@ -1,12 +1,18 @@
 package com.springmvc.service;
 
+import com.springmvc.model.Book;
 import com.springmvc.model.User;
 import junit.framework.TestCase;
+import org.junit.Assert;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.annotation.Rollback;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -29,28 +35,37 @@ public class TestUserService extends TestCase{
 	}
 	
 	public void testSelectById(){
-		User u=userService.selectByPrimaryKey(1);
-		System.out.println(u.getUsername()+"-"+u.getPassword()+"-"+u.getAge());
+		UUID uuid = UUID.randomUUID();
+		User u=userService.selectByPrimaryKey(Integer.valueOf(uuid.toString()));
+		Assert.assertTrue(null == u);
+		Mockito.when(userService.selectByPrimaryKey(-1)).thenReturn(null);
+		u = userService.selectByPrimaryKey(-1);
+		Mockito.verify(userService.selectByPrimaryKey(-1), Mockito.times(1));
+		Assert.assertNull(u);
 	}
-	
 
+
+	@Rollback
 	public void testInsert(){
 		User u=new  User();
 		u.setUsername("xiaomi");
 		u.setPassword("123456");
 		u.setAge(18);
 		int result=userService.insert(u);
-		System.out.println(result);
-		userService.deleteByPrimaryKey(u.getId());
+		Assert.assertTrue("插入成功", 1==result);
+		Assert.assertNotNull(u.getId());
+		//System.out.println(result);
+		int i = userService.deleteByPrimaryKey(u.getId());
+		Assert.assertTrue(1==i);
+
+		u = userService.selectByPrimaryKey(u.getId());
+		Assert.assertTrue(null ==u);
+
 	}
 	
+
 	
-	public void testInsertUUID(){
-	    UUID uuid = UUID.randomUUID();
-	    
-	}
-	
-	
+	@Rollback
 	public void testInsertMore(){
 	    DecimalFormat df1 = new DecimalFormat("00");
         User u = new User();
@@ -65,7 +80,7 @@ public class TestUserService extends TestCase{
         }
     }
 	
-	/*public void testInsertBook()
+	public void testInsertBook()
 	{
 		Book book=new Book();
 		book.setName("西游记1");
@@ -73,14 +88,14 @@ public class TestUserService extends TestCase{
 		try {
 			bookService.insert(book);
 		}catch (Exception e){
-			System.out.println(e.getMessage()+"book"+book);
+			Assert.fail("构建书本信息插入数据库错误");
 		}
 
 		List<Book> lists=bookService.selectAllBook();
-		bookService.deleteByPrimaryKey(book.getId());
 		assertNotNull(lists);
+		bookService.deleteByPrimaryKey(book.getId());
 		System.out.println(lists.size());
-	}*/
+	}
 	
 	
 }

@@ -13,12 +13,13 @@ import com.springmvc.service.BookService;
 @Service("bookService")
 public class BookServiceImpl implements BookService {
 
-    private BookMapper bookMapper; 
+	@Autowired
+    private BookMapper bookMapper;
 
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return bookMapper.deleteByPrimaryKey(id);
 	}
 
 	@Override
@@ -29,7 +30,7 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public int insertSelective(Book record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return bookMapper.insertSelective(record);
 	}
 
 	@Override
@@ -40,13 +41,13 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public int updateByPrimaryKeySelective(Book record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return bookMapper.updateByPrimaryKeySelective(record);
 	}
 
 	@Override
 	public int updateByPrimaryKey(Book record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return bookMapper.updateByPrimaryKey(record);
 	}
 
 	@Override

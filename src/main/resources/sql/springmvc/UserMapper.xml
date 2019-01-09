@@ -20,7 +20,7 @@
         DELETE FROM user
         WHERE id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.springmvc.model.User" useGeneratedKeys="true">
+    <insert id="insert" parameterType="com.springmvc.model.User" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO user (user_name, password,
                           age)
         VALUES (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
