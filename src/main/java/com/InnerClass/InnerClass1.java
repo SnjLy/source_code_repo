@@ -52,7 +52,7 @@ public class InnerClass1 {
     public static void main(String[] args) {
         InnerClass1 class1 = new InnerClass1();
         class1.innerClass("外部类调用普通方法");
-        class1.method("外部类调用静态方法");
+        method("外部类调用静态方法");
         new Inner().show();
     }
 
