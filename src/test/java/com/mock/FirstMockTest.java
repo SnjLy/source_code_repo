@@ -1,9 +1,12 @@
 package com.mock;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InOrder;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
@@ -49,5 +52,18 @@ public class FirstMockTest {
         ArgumentCaptor<Integer> argumentCaptor = ArgumentCaptor.forClass(Integer.class);
         verify(mock1, times(2)).get(argumentCaptor.capture());
         System.out.println("argument:" + argumentCaptor.getValue());
+    }
+
+
+    @Test
+    public void testFindInSet(){
+
+        HashSet<String> sets = new HashSet<>(10);
+        HashSet<String> subSets = new HashSet<>(5);
+
+        sets.retainAll(subSets);
+
+        Collection<Integer> intersection = CollectionUtils.intersection(sets, subSets);
+
     }
 }
