@@ -4,12 +4,12 @@
 <generatorConfiguration>
     <!-- 数据库驱动包位置 -->
     <classPathEntry location="mysql-connector-java-5.1.22.jar"/>
-    <context id="DB2Tables" targetRuntime="MyBatis3">
+    <!--<context id="DB2Tables" targetRuntime="MyBatis3"> </context>-->
     <!-- 生成prod库 实体类以及mapper -->
     <context id="precisiondb" targetRuntime="MyBatis3" defaultModelType="flat">
-        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+        <!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>-->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
-        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+        <!--<plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>-->
 
         <!-- 忽略生成注释日期 -->
         <commentGenerator>
@@ -17,7 +17,7 @@
             <!-- 如果生成日期，会造成即使修改一个字段，整个实体类所有属性都会发生变化，不利于版本控制，所以设置为true -->
             <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="false"/>
+            <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
         <!-- 数据库链接URL、用户名、密码 -->
@@ -47,19 +47,19 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
-        <table tableName="scope" domainObjectName="Scope"
+        <table tableName="scope" domainObjectName="ScopeEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-        <table tableName="scope_config" domainObjectName="ScopeConfig"
+        <table tableName="scope_config" domainObjectName="ScopeConfigEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-        <table tableName="scope_module" domainObjectName="ScopeModule"
+        <table tableName="scope_module" domainObjectName="ScopeModuleEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-        <table tableName="scope_res_config" domainObjectName="ScopeRecConfig"
+        <table tableName="scope_res_config" domainObjectName="ScopeRecConfigEntity"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
