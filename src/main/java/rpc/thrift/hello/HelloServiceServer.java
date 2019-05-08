@@ -18,7 +18,7 @@ public class HelloServiceServer {
     public static void main(String[] args) {
         try {
             System.out.println("服务端开启....");
-            TProcessor tprocessor = new service.demo.Hello.Processor<service.demo.Hello.Iface>(new HelloServiceImpl());
+            TProcessor tprocessor = new rpc.thrift.hello.Hello.Processor<rpc.thrift.hello.Hello.Iface>(new HelloServiceImpl());
             // 简单的单线程服务模型
             TServerSocket serverTransport = new TServerSocket(9898);
             TServer.Args tArgs = new TServer.Args(serverTransport);

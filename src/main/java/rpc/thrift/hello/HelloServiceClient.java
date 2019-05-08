@@ -22,7 +22,7 @@ public class HelloServiceClient {
             transport = new TSocket("localhost", 9898, 30000);
             // 协议要和服务端一致
             TProtocol protocol = new TBinaryProtocol(transport);
-            service.demo.Hello.Client client = new service.demo.Hello.Client(protocol);
+            rpc.thrift.hello.Hello.Client client = new rpc.thrift.hello.Hello.Client(protocol);
             transport.open();
             String result = client.hello("哈哈");
             System.out.println(result);

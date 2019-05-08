@@ -8,7 +8,7 @@ import org.apache.thrift.TException;
  * @author: liuyong
  * @date: 2019-05-08
  */
-public class HelloServiceImpl implements service.demo.Hello.Iface {
+public class HelloServiceImpl implements rpc.thrift.hello.Hello.Iface {
 
 
     @Override
