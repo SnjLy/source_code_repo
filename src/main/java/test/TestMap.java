@@ -24,13 +24,17 @@ public class TestMap {
 
         System.out.println(JSON.toJSONString(map.values()));
         Iterator<Integer> iterator = map.values().iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Integer t = iterator.next();
-            if (t==10){
+            if (t == 10) {
                 iterator.remove();
             }
         }
 
         System.out.println(JSON.toJSONString(map.values()));
+    }
+
+    public void test(){
+
     }
 }

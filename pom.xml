@@ -233,11 +233,11 @@
 			<artifactId>mahout-mr</artifactId>
 			<version>0.12.2</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.apache.mahout</groupId>
 			<artifactId>mahout-mysql</artifactId>
 			<version>0.12.2</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>com.hankcs</groupId>
@@ -266,6 +266,13 @@
 			<version>4.3</version>
 		</dependency>
 
+		<!--添加thrift依赖开始-->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.12.0</version>
+		</dependency>
+		<!--添加thrift依赖结束-->
 
 	</dependencies>
 
