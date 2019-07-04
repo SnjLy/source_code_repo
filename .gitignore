@@ -25,3 +25,6 @@ RemoteSystemsTempFiles
 *.DS_Stor
 *.DS_Store
 *.factorypath
+/*.factorypath
+/*.classpath
+*/target/

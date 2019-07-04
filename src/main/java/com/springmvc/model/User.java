@@ -1,6 +1,8 @@
 package com.springmvc.model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private Integer id;
 
     private String username;
@@ -48,6 +50,14 @@ public class User {
     
     public User(){
         
+    }
+
+
+    public User(Integer id, String username, String password, Integer age) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.age = age;
     }
 
     @Override
