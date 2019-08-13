@@ -2,7 +2,6 @@
 target/
 classes
 generated
-generator
 
 # IDEA artifacts and output dirs
 *.iml
