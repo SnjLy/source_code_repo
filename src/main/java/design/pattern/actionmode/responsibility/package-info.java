@@ -5,7 +5,7 @@
  * @Author : LiuYong
  * Created by yehao on 2018/9/11.
  */
-package design.pattern.actionmode.responsibility.responsibility_example;
+package design.pattern.actionmode.responsibility;
 
 /*
  * 职责链模式实例
