@@ -11,7 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
 		<junit.version>4.11</junit.version>
-		<spring.version>4.3.20.RELEASE</spring.version>
+		<spring.version>6.0.0</spring.version>
 		<spring-orm.version>3.1.1.RELEASE</spring-orm.version>
 		<fastjson.version>1.2.31</fastjson.version>
 		<commons-lang3.version>3.3.2</commons-lang3.version>
